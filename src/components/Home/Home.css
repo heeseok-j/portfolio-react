@@ -1,0 +1,6 @@
+.home {
+  background: url("/public/img/home_background.png") center/cover no-repeat;
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
+}

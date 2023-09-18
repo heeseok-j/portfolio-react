@@ -1,0 +1,38 @@
+.major-icon {
+  width: 200px;
+  height: 200px;
+  font-size: 100px;
+  line-height: 200px;
+  border: 1px solid #73aace;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  color: #73aace;
+}
+
+.major-icon div {
+  border-radius: 50%;
+  transition: all 270ms ease;
+}
+
+.major-icon:hover div {
+  color: #feb546;
+  transform: rotate(-20deg) scale(1.2);
+}
+
+.major-icon-title {
+  color: #4d4d4d;
+}
+
+@media all and (max-width: 768px) {
+  .major-icon-box {
+    margin-bottom: 30px;
+  }
+
+  .major-icon {
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    font-size: 65px;
+    line-height: 150px;
+  }
+}

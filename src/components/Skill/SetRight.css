@@ -1,0 +1,16 @@
+.skillset-right {
+  flex-basis: 40%;
+}
+
+.skillset-title {
+  color: #ffffff;
+}
+
+.tools {
+  padding: 20px;
+  background-color: #616161;
+}
+
+.etc {
+  padding: 20px;
+}

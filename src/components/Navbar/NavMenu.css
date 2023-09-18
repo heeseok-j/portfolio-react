@@ -1,0 +1,31 @@
+.nav-menu {
+  display: flex;
+  padding: 4px;
+}
+
+.nav-menu li {
+  padding: 8px 12px;
+  margin: 0px 4px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.nav-menu li:hover {
+  border: 1px solid #ffffff;
+  background-color: #73aace;
+}
+
+@media all and (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+    background-color: #86d7db;
+  }
+
+  .nav-menu.show-up {
+    display: block;
+  }
+}

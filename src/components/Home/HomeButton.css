@@ -1,0 +1,15 @@
+.home-contact {
+  font-size: 18px;
+  font-weight: 700;
+  color: #73aace;
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid #73aace;
+  border-radius: 8px;
+}
+
+.home-contact:hover {
+  background-color: #73aace;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}

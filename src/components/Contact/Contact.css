@@ -1,0 +1,29 @@
+.contact {
+  background-color: #86d7db;
+}
+
+.contact-title,
+.contact-email {
+  color: #ffffff;
+}
+
+.contact-title {
+  margin: 30px 0;
+}
+
+.contact-links {
+  font-size: 55px;
+  margin: 24px 0;
+  color: white;
+}
+
+.contact-links i {
+  display: inline-block;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.contact-links i:hover {
+  transform: scale(1.15);
+  cursor: pointer;
+}

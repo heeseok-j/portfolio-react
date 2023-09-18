@@ -1,0 +1,12 @@
+.skillset {
+  display: flex;
+  background-color: #7c7979;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+@media all and (max-width: 768px) {
+  .skillset {
+    flex-direction: column;
+  }
+}
