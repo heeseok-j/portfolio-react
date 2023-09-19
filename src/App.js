@@ -50,7 +50,7 @@ const App = () => {
         onTestimonialsClick={onTestimonialsClick}
         onContactClick={onContactClick}
       />
-      <Home ref={homeRef} />
+      <Home ref={homeRef} onContactClick={onContactClick} />
       <About ref={aboutRef} />
       <Skills ref={skillsRef} />
       <Work ref={workRef} />

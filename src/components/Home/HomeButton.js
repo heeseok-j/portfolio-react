@@ -2,10 +2,12 @@ import React from "react";
 
 import "./HomeButton.css";
 
-const HomeButton = () => {
+const HomeButton = (props) => {
   return (
     <div className="home-button">
-      <button className="home-contact">Contact Me</button>
+      <button onClick={props.onMoveToContact} className="home-contact">
+        Contact Me
+      </button>
     </div>
   );
 };
