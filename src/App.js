@@ -9,53 +9,20 @@ import Testimonials from "./components/Testimonials/Testimonials";
 import Contact from "./components/Contact/Contact";
 
 const App = () => {
-  const homeRef = useRef();
-  const aboutRef = useRef();
-  const skillsRef = useRef();
-  const workRef = useRef();
-  const testimonialsRef = useRef();
-  const contactRef = useRef();
-
-  const onHomeClick = () => {
-    homeRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onAboutClick = () => {
-    aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onSkillsClick = () => {
-    skillsRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onWorkClick = () => {
-    workRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onTestimonialsClick = () => {
-    testimonialsRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const onContactClick = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  const elementRef = useRef([]);
 
   return (
     <div>
-      <Navbar
-        onHomeClick={onHomeClick}
-        onAboutClick={onAboutClick}
-        onSkillsClick={onSkillsClick}
-        onWorkClick={onWorkClick}
-        onTestimonialsClick={onTestimonialsClick}
-        onContactClick={onContactClick}
+      <Navbar elementRef={elementRef} />
+      <Home
+        elementRef={elementRef}
+        ref={(el) => (elementRef.current[0] = el)}
       />
-      <Home ref={homeRef} onContactClick={onContactClick} />
-      <About ref={aboutRef} />
-      <Skills ref={skillsRef} />
-      <Work ref={workRef} />
-      <Testimonials ref={testimonialsRef} />
-      <Contact ref={contactRef} />
+      <About ref={(el) => (elementRef.current[1] = el)} />
+      <Skills ref={(el) => (elementRef.current[2] = el)} />
+      <Work ref={(el) => (elementRef.current[3] = el)} />
+      <Testimonials ref={(el) => (elementRef.current[4] = el)} />
+      <Contact ref={(el) => (elementRef.current[5] = el)} />
     </div>
   );
 };

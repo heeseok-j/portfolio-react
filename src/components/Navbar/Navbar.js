@@ -7,41 +7,17 @@ import useScroll from "../Hook/useScroll";
 
 import "./Navbar.css";
 
-const Navbar = (props) => {
+const Navbar = ({ elementRef }) => {
   const ScrollY = useScroll();
 
   const [height, setHeight] = useState(0);
+  const [useShow, setUseShow] = useState(true);
+
   const NavbarRef = useRef(null);
 
   useLayoutEffect(() => {
     setHeight(NavbarRef.current.clientHeight);
   }, []);
-
-  const onMoveToHome = () => {
-    props.onHomeClick();
-  };
-
-  const onMoveToAbout = () => {
-    props.onAboutClick();
-  };
-
-  const onMoveToSkills = () => {
-    props.onSkillsClick();
-  };
-
-  const onMoveToWork = () => {
-    props.onWorkClick();
-  };
-
-  const onMoveToTestimonials = () => {
-    props.onTestimonialsClick();
-  };
-
-  const onMoveToContact = () => {
-    props.onContactClick();
-  };
-
-  const [useShow, setUseShow] = useState(true);
 
   const toggleBtnclick = () => {
     setUseShow(!useShow);
@@ -54,15 +30,7 @@ const Navbar = (props) => {
       ref={NavbarRef}
     >
       <NavLogo />
-      <NavMenu
-        onMoveToHome={onMoveToHome}
-        onMoveToAbout={onMoveToAbout}
-        onMoveToSkills={onMoveToSkills}
-        onMoveToWork={onMoveToWork}
-        onMoveToTestimonials={onMoveToTestimonials}
-        onMoveToContact={onMoveToContact}
-        useshow={useShow}
-      />
+      <NavMenu useshow={useShow} elementRef={elementRef} />
       <button onClick={toggleBtnclick} className="navbar-toggle-btn">
         <FaBars />
       </button>

@@ -6,17 +6,13 @@ import HomeButton from "./HomeButton";
 
 import "./Home.css";
 
-const Home = forwardRef((props, ref) => {
-  const onMoveToContact = () => {
-    props.onContactClick();
-  };
-
+const Home = forwardRef(({ elementRef }, ref) => {
   return (
     <section ref={ref} className="home">
       <div className="home-container">
         <HomeAvatar />
         <HomeInfo />
-        <HomeButton onMoveToContact={onMoveToContact} />
+        <HomeButton elementRef={elementRef} />
       </div>
     </section>
   );

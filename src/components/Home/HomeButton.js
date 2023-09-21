@@ -2,10 +2,14 @@ import React from "react";
 
 import "./HomeButton.css";
 
-const HomeButton = (props) => {
+const HomeButton = ({ elementRef }) => {
+  const onMoveToContact = () => {
+    elementRef.current[5].scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="home-button">
-      <button onClick={props.onMoveToContact} className="home-contact">
+      <button onClick={onMoveToContact} className="home-contact">
         Contact Me
       </button>
     </div>
