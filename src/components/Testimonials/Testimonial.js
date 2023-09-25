@@ -1,7 +1,6 @@
 import TestimonialLeft from "./TestimonialLeft";
 import TestimonialRight from "./TestimonialRight";
-import { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import useObserver from "../Hooks/useObserver";
 
 import "./Testimonial.css";
 
@@ -45,19 +44,11 @@ const testimonialItem = [
 ];
 
 const Testimonial = () => {
-  const [viewport, setViewport] = useState(false);
-
-  const { ref, inView } = useInView({
+  const [ref, viewport] = useObserver({
     root: null,
     rootMargin: "0px",
     threshold: 0,
   });
-
-  useEffect(() => {
-    if (inView) {
-      setViewport(true);
-    }
-  }, [inView]);
 
   return (
     <div ref={ref} className="testimonial-box">

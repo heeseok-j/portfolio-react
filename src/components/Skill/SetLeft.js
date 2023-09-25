@@ -1,5 +1,4 @@
-import { useInView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import useObserver from "../Hooks/useObserver";
 
 import "./SetLeft.css";
 
@@ -31,19 +30,11 @@ const skillItem = [
 ];
 
 const SkillLeft = () => {
-  const [viewport, setViewport] = useState(false);
-
-  const { ref, inView } = useInView({
+  const [ref, viewport] = useObserver({
     root: null,
     rootMargin: "0px",
     threshold: 0.35,
   });
-
-  useEffect(() => {
-    if (inView) {
-      setViewport(true);
-    }
-  }, [inView]);
 
   return (
     <div ref={ref} className="skillset-left">

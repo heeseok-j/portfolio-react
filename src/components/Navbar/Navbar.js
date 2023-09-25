@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa6";
 
 import NavMenu from "./NavMenu";
 import NavLogo from "./NavLogo";
-import useScroll from "../Hook/useScroll";
+import useScroll from "../Hooks/useScroll";
 
 import "./Navbar.css";
 
