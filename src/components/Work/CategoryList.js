@@ -35,21 +35,27 @@ const categoryList = [
   },
 ];
 
-const CategoryList = (props) => {
-  const [items, setItems] = useState(props.projectData);
+const CategoryList = ({ projectData, setMatchCheck, setFade }) => {
+  const [items, setItems] = useState(projectData);
 
   useEffect(() => {
-    props.setMatchCheck(items);
+    setMatchCheck(items);
   });
+
+  console.log("abc");
 
   const click = (e) => {
     const filter = e.target.dataset.filter;
-    const triggeredItems = props.projectData.map((item) => {
+    const triggeredItems = projectData.map((item) => {
       if (item.type === filter || filter === "all") {
         item.isVisible = true;
       } else {
         item.isVisible = false;
       }
+      setFade(true);
+      setTimeout(() => {
+        setFade(false);
+      }, 300);
       return item;
     });
     setItems(triggeredItems);

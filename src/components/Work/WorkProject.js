@@ -45,13 +45,13 @@ const projectItem = [
   },
 ];
 
-const WorkProject = (props) => {
+const WorkProject = ({ setProjectData, fade }) => {
   useEffect(() => {
-    props.setProjectData(projectItem);
+    setProjectData(projectItem);
   });
 
   return (
-    <div className="work-projects">
+    <div className={fade ? "work-projects animation" : "work-projects"}>
       {projectItem.map((item) => (
         <div
           onClick={() => window.open(item.url)}

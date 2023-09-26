@@ -2,6 +2,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all 0.3s ease-out;
+}
+
+.animation {
+  transform: scale(0.9) translateY(40px);
+  animation: fade 0.3s ease-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .project {
